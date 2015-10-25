@@ -45,7 +45,7 @@ y=HWpdf(x,setting);
 %Plot
 %---------------------------------------------------------------------
 
-Nbin=1000;
+Nbin=128;
 [nelements,xcenters]=hist(data_trun,Nbin);
 out=hist(data_trun,Nbin);
 out=out/sum(out);

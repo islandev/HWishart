@@ -1,11 +1,11 @@
 clear all;clc
 %存放数据的路径
-filePath='C:\Users\Administrator\Desktop\data_polsar\AIRSAR_DeathValley\vge\C3\';
+filePath='C:\Users\Administrator\Desktop\data_polsar\AIRSAR_SanFrancisco\vege\C3\';
 %%filePath='C:\Users\Administrator\Desktop\data_polsar\ESAR_Oberpfaffenhofen\vgeur\C3\';
 
-row=76;
-col=76 ;
-L=9;
+row=59;
+col=63 ;
+L=4;
 data = zeros(row,col,9);    
 %从路径读取文件
 fIn = fopen([filePath 'C11.bin'],'r');
@@ -32,4 +32,5 @@ data(:,:,9) = fread(fIn,[col,row],'float').';   fclose(fIn);
 [hh_setting]=fitdata(data(:,:,1),L);
 [hv_setting]=fitdata(data(:,:,2),L);
 [vv_setting]=fitdata(data(:,:,3),L);
+data(:,:,1)
 
