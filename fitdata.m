@@ -51,25 +51,28 @@ out=hist(data_trun,Nbin);
 out=out/sum(out);
 
 figure;
-bar(xcenters,nelements/N_trun/(xcenters(2)-xcenters(1)),'y');
+bar(xcenters,nelements/N_trun,'y');
+%bar(xcenters,nelements/N_trun/(xcenters(2)-xcenters(1)),'y');
 hold on;
 %H-Wishart
+y=y.*maxsample/Nbin;
 plot(x,y,'b-x');
 hold on;
 %k-wishart
+y_k=y_k.*maxsample/Nbin;
 plot(x,y_k,'r')
 xlabel('Texture'); %标记横坐标
 ylabel('Pd'); %标记纵坐标
-legend( 'data hist-diagram ','H-Wishart','K-distribution')
-y=y.*maxsample/Nbin;
+legend( 'Histogram ','多纹理H-Wishart','K-Wishart')
+%%y=y.*maxsample/Nbin;
 
 setting.ksd=ksdistance(out,y);
 %计算MSE
-y_k=y_k.*maxsample/Nbin;
-k_mse=calMSE(out,y_k);
-h_mse=calMSE(out,y);
-setting.kmse=k_mse;
-setting.hmse=h_mse;
+%y_k=y_k.*maxsample/Nbin;
+%k_mse=calMSE(out,y_k);
+%h_mse=calMSE(out,y);
+%setting.kmse=k_mse;
+%setting.hmse=h_mse;
 
 end
 

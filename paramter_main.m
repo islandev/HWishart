@@ -1,9 +1,11 @@
 clear all;clc
 %存放数据的路径
 filePath='C:\Users\Administrator\Desktop\data_polsar\AIRSAR_DeathValley\vge\C3\';
-row=71;
-col=71 ;
-L=4;
+%%filePath='C:\Users\Administrator\Desktop\data_polsar\ESAR_Oberpfaffenhofen\vgeur\C3\';
+
+row=76;
+col=76 ;
+L=9;
 data = zeros(row,col,9);    
 %从路径读取文件
 fIn = fopen([filePath 'C11.bin'],'r');
